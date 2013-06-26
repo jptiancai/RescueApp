@@ -57,26 +57,25 @@ public class MainActivity extends Activity {
 
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-			Intent intent = null;
+			Intent intent = new Intent(MainActivity.this,
+					SecCategoryActivity.class);
 			switch (position) {
 			case 0:
-				intent = new Intent(parent.getContext(),
-						SecCategoryActivity.class);
 				intent.putExtra("natureId", 1);
+				overridePendingTransition(R.anim.push_left_in,
+						R.anim.push_left_out);
 				break;
 			case 1:
-				intent = new Intent(parent.getContext(),
-						SecCategoryActivity.class);
 				intent.putExtra("sportId", 2);
 				break;
 			case 2:
-				intent = new Intent(parent.getContext(),
-						SecCategoryActivity.class);
 				intent.putExtra("dayId", 3);
 				break;
 
 			}
 			startActivity(intent);
+			overridePendingTransition(R.anim.push_left_in,
+					R.anim.push_left_out);
 		}
 
 	}
