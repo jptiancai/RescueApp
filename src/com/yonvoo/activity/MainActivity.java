@@ -62,14 +62,17 @@ public class MainActivity extends Activity {
 			case 0:
 				intent = new Intent(parent.getContext(),
 						SecCategoryActivity.class);
+				intent.putExtra("natureId", 1);
 				break;
 			case 1:
 				intent = new Intent(parent.getContext(),
 						SecCategoryActivity.class);
+				intent.putExtra("sportId", 2);
 				break;
 			case 2:
 				intent = new Intent(parent.getContext(),
 						SecCategoryActivity.class);
+				intent.putExtra("dayId", 3);
 				break;
 
 			}
