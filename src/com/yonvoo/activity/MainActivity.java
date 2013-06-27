@@ -27,13 +27,13 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		/******************** ActionBar ***************************/
+		// ActionBar
 		ActionBar actionBar = this.getActionBar();
 		// 添加向上箭头
 		actionBar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP,
 				ActionBar.DISPLAY_HOME_AS_UP);
 
-		/******************** GridView ***************************/
+		// GridView
 		String[] titles = { "自然灾害", "运动自救", "日常意外" };
 		int[] resIds = { R.drawable.ziranzaihai, R.drawable.yundongzijiu,
 				R.drawable.richangyiwai };
@@ -53,6 +53,11 @@ public class MainActivity extends Activity {
 
 	}
 
+	/**
+	 * gridview监听事件
+	 * @author 姜工
+	 *
+	 */
 	private final class OnListItemClickListener implements OnItemClickListener {
 
 		public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -74,8 +79,7 @@ public class MainActivity extends Activity {
 
 			}
 			startActivity(intent);
-			overridePendingTransition(R.anim.push_left_in,
-					R.anim.push_left_out);
+			overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 		}
 
 	}
