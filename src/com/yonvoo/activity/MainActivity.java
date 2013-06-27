@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
-			Toast.makeText(this, "单击了图标", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "单击了返回图标", Toast.LENGTH_SHORT).show();
 			return true;
 		case R.id.optionitem3:
 			Toast.makeText(this, "单击了选项3", Toast.LENGTH_SHORT).show();
