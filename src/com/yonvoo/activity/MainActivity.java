@@ -26,8 +26,6 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		// ActionBar
-		ActionBar actionBar = this.getActionBar();
 
 		// GridView
 		String[] titles = { "自然灾害", "运动自救", "日常意外" };

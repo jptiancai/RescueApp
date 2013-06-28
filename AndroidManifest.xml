@@ -8,29 +8,36 @@
         android:minSdkVersion="11"
         android:targetSdkVersion="15" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/app_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-         <uses-library android:name="android.test.runner" />
+        <uses-library android:name="android.test.runner" />
+
         <activity
             android:name="com.yonvoo.activity.SplashActivity"
             android:configChanges="keyboardHidden"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.yonvoo.activity.MainActivity" ></activity>
-        <activity android:name="com.yonvoo.activity.SecCategoryActivity" ></activity>
-        <activity android:name="com.yonvoo.activity.DetailActivity" ></activity>
-        <activity android:name="com.yonvoo.activity.AboutActivity" ></activity>
+        <activity android:name="com.yonvoo.activity.MainActivity" >
+        </activity>
+        <activity android:name="com.yonvoo.activity.SecCategoryActivity" >
+        </activity>
+        <activity android:name="com.yonvoo.activity.DetailActivity" >
+        </activity>
+        <activity android:name="com.yonvoo.activity.AboutActivity" >
+        </activity>
         <activity
             android:name="com.yonvoo.activity.GuideActivity"
             android:configChanges="keyboardHidden"
@@ -38,8 +45,9 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
     </application>
 
-       <instrumentation
+    <instrumentation
         android:name="android.test.InstrumentationTestRunner"
         android:label="Test for yonvoo app"
         android:targetPackage="com.yonvoo.main" />
+
 </manifest>

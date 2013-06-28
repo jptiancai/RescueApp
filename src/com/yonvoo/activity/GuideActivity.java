@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -62,7 +63,6 @@ public class GuideActivity extends Activity implements OnPageChangeListener {
 		views.add(inflater.inflate(R.layout.what_new_one, null));
 		views.add(inflater.inflate(R.layout.what_new_two, null));
 		views.add(inflater.inflate(R.layout.what_new_three, null));
-		views.add(inflater.inflate(R.layout.what_new_four, null));
 
 		// 初始化Adapter
 		vpAdapter = new ViewPagerAdapter(views, this);
