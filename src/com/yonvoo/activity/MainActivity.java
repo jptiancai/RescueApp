@@ -12,7 +12,6 @@ import android.view.animation.ScaleAnimation;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.yonvoo.adapter.GridViewAdapter;
 import com.yonvoo.main.R;
@@ -29,9 +28,6 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.main);
 		// ActionBar
 		ActionBar actionBar = this.getActionBar();
-		// 添加向上箭头
-		actionBar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP,
-				ActionBar.DISPLAY_HOME_AS_UP);
 
 		// GridView
 		String[] titles = { "自然灾害", "运动自救", "日常意外" };
@@ -55,8 +51,9 @@ public class MainActivity extends Activity {
 
 	/**
 	 * gridview监听事件
+	 * 
 	 * @author 姜工
-	 *
+	 * 
 	 */
 	private final class OnListItemClickListener implements OnItemClickListener {
 
@@ -67,8 +64,6 @@ public class MainActivity extends Activity {
 			switch (position) {
 			case 0:
 				intent.putExtra("natureId", 1);
-				overridePendingTransition(R.anim.push_left_in,
-						R.anim.push_left_out);
 				break;
 			case 1:
 				intent.putExtra("sportId", 2);
@@ -88,24 +83,17 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		getMenuInflater().inflate(R.menu.activity_main, menu);
-		menu.findItem(R.id.optionitem3).getActionView();
+		menu.findItem(R.id.subitem2).getActionView();
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case android.R.id.home:
-			Toast.makeText(this, "单击了返回图标", Toast.LENGTH_SHORT).show();
-			return true;
-		case R.id.optionitem3:
-			Toast.makeText(this, "单击了选项3", Toast.LENGTH_SHORT).show();
-			return true;
-		case R.id.subitem1:
-			Toast.makeText(this, "单击了子菜单选项1", Toast.LENGTH_SHORT).show();
-			return true;
 		case R.id.subitem2:
-			Toast.makeText(this, "单击了子菜单选项2", Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
