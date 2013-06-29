@@ -4,13 +4,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +19,7 @@ import android.view.animation.ScaleAnimation;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.yonvoo.adapter.GridViewAdapter;
 import com.yonvoo.main.R;
@@ -28,6 +29,8 @@ public class MainActivity extends Activity {
 	private GridView gridView;
 	private ScaleAnimation sa;
 	private LayoutAnimationController lac;
+	// 定义一个变量，来标识是否退出
+	private static boolean isExit = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,45 @@ public class MainActivity extends Activity {
 		dbInsert();
 
 	}
+	
+    Handler mHandler = new Handler() {
 
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            isExit = false;
+        }
+    };
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			 exit();
+	            return false;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+	
+	/**
+	 * 退出系统
+	 */
+	 private void exit() {
+	        if (!isExit) {
+	            isExit = true;
+	            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+	                    Toast.LENGTH_SHORT).show();
+	            // 利用handler延迟发送更改状态信息
+	            mHandler.sendEmptyMessageDelayed(0, 2000);
+	        } else {
+	            finish();
+	            System.exit(0);
+	        }
+	    }
+	
+	/**
+	 * 从assets文件夹读取，写入到应用安装路径下
+	 */
 	private void dbInsert() {
 		String DB_PATH = "/data/data/com.yonvoo.main/databases/";
 		String DB_NAME = "Rescue.db";

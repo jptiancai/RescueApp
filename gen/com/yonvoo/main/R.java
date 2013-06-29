@@ -111,6 +111,9 @@ public final class R {
         public static final int about_title=0x7f050002;
         public static final int about_tontact=0x7f050006;
         public static final int app_name=0x7f050000;
+        /**  退出 
+         */
+        public static final int press_again_exit=0x7f050008;
     }
     public static final class style {
         /** 
