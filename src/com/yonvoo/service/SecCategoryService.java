@@ -3,10 +3,10 @@ package com.yonvoo.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yonvoo.domain.SecCategory;
-
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.yonvoo.domain.SecCategory;
 
 public class SecCategoryService {
 
@@ -35,12 +35,13 @@ public class SecCategoryService {
 				"select title from T_SecCategory where category_id=?",
 				new String[] { category_Id + "" });
 		while (cursor.moveToNext()) {
-			String title=cursor.getString(cursor.getColumnIndex("title"));
+			String title = cursor.getString(cursor.getColumnIndex("title"));
 			titles.add(title);
 		}
 		cursor.close();
 		dbhelper.closeDatabase();
 		return titles;
 	}
+
 
 }

@@ -17,12 +17,14 @@ public class DBHelper {
 	String path;
 
 	public SQLiteDatabase openDatabase() {
-		File audio = new File(Environment.getExternalStorageDirectory(),
+		/*File audio = new File(Environment.getExternalStorageDirectory(),
 				"/Rescue.db");
 		if (audio.exists()) {
 			path = audio.getAbsolutePath();
 			db = SQLiteDatabase.openDatabase(path, null, 0);
-		}
+		}*/
+		path = "/data/data/com.yonvoo.main/databases/Rescue.db";
+		db = SQLiteDatabase.openDatabase(path, null, 0);
 		return db;
 	}
 
