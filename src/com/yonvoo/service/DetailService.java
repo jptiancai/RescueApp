@@ -8,37 +8,25 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.yonvoo.domain.Detail;
 
-public class DetailService {
+public class DetailService
+{
 
 	private DBHelper dbhelper = new DBHelper();
 
-	public List<Detail> find() {
-		List<Detail> details = new ArrayList<Detail>();
+	public List<String> findContent(int _id)
+	{
+		List<String> titles = new ArrayList<String>();
 		SQLiteDatabase db = dbhelper.openDatabase();
-		Cursor cursor = db.rawQuery("select * from T_Detail", null);
-		while (cursor.moveToNext()) {
-			int id = cursor.getColumnIndex("_id");
-			String content = cursor.getString(cursor.getColumnIndex("content"));
-			details.add(new Detail(id, content));
+		Cursor cursor = db.rawQuery(
+				"select content from T_Detail where fk_id=?", new String[]
+				{ _id + "" });
+		while (cursor.moveToNext())
+		{
+			String title = cursor.getString(cursor.getColumnIndex("content"));
+			titles.add(title);
 		}
 		cursor.close();
 		dbhelper.closeDatabase();
-		return details;
-	}
-
-	public List<String> findDetailContent(String title) {
-		List<String> details = new ArrayList<String>();
-		SQLiteDatabase db = dbhelper.openDatabase();
-		Cursor cursor = db
-				.rawQuery(
-						"select content from T_Detail where sec_title like '%?%'",
-						new String[]{title});
-		while (cursor.moveToNext()) {
-			String content=cursor.getString(cursor.getColumnIndex("content"));
-			details.add(content);
-		}
-		cursor.close();
-		dbhelper.closeDatabase();
-		return details;
+		return titles;
 	}
 }

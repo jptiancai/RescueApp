@@ -61,27 +61,29 @@ public final class R {
         public static final int sport1=0x7f020029;
         public static final int sport2=0x7f02002a;
         public static final int sport3=0x7f02002b;
-        public static final int welcome=0x7f02002c;
-        public static final int welcome_android=0x7f02002d;
-        public static final int whats_new_start_btn=0x7f02002e;
-        public static final int white_dot=0x7f02002f;
-        public static final int yundongzijiu=0x7f020030;
-        public static final int ziranzaihai=0x7f020031;
+        public static final int test=0x7f02002c;
+        public static final int welcome=0x7f02002d;
+        public static final int welcome_android=0x7f02002e;
+        public static final int whats_new_start_btn=0x7f02002f;
+        public static final int white_dot=0x7f020030;
+        public static final int yundongzijiu=0x7f020031;
+        public static final int ziranzaihai=0x7f020032;
     }
     public static final class id {
-        public static final int ItemImage=0x7f080002;
-        public static final int ItemTitle=0x7f080003;
-        public static final int R1=0x7f080001;
+        public static final int ItemImage=0x7f080003;
+        public static final int ItemTitle=0x7f080004;
+        public static final int R1=0x7f080002;
         public static final int about_textview_weibo=0x7f080000;
-        public static final int gridview=0x7f080008;
-        public static final int imageView1=0x7f08000a;
-        public static final int iv_start_weibo=0x7f08000b;
-        public static final int listItemImage=0x7f080006;
-        public static final int listItemTitle=0x7f080007;
-        public static final int ll=0x7f080005;
-        public static final int secList=0x7f080009;
-        public static final int subitem2=0x7f08000c;
-        public static final int viewpager=0x7f080004;
+        public static final int gridview=0x7f080009;
+        public static final int imageView1=0x7f08000b;
+        public static final int iv_start_weibo=0x7f08000c;
+        public static final int listItemImage=0x7f080007;
+        public static final int listItemTitle=0x7f080008;
+        public static final int ll=0x7f080006;
+        public static final int secList=0x7f08000a;
+        public static final int subitem2=0x7f08000d;
+        public static final int tx01=0x7f080001;
+        public static final int viewpager=0x7f080005;
     }
     public static final class layout {
         public static final int about=0x7f030000;

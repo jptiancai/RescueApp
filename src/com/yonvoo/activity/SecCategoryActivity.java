@@ -78,8 +78,10 @@ public class SecCategoryActivity extends Activity {
 			TextView title = (TextView) view.findViewById(R.id.listItemTitle);
 			Intent intent = new Intent(SecCategoryActivity.this,
 					DetailActivity.class);
-			intent.putExtra("title", title.getText());
+			String id1 = sec_Category_Service.findId((String) title.getText());
+			intent.putExtra("id", id1);
 			startActivity(intent);
+
 			overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 		}
 
