@@ -14,7 +14,7 @@ import android.widget.TextView;
  * 
  * @功能 在详细activity上显示从数据库里查询出的内容
  * 
- * @创建日志 Young Jul 1
+ * @创建日志 Young Jul 1 
  * 
  * @修改日志 暂无
  * 

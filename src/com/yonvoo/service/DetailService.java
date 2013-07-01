@@ -12,7 +12,7 @@ import com.yonvoo.domain.Detail;
  * 
  * @功能 DetailActivity的DAO(Database access object)，具体实现对于数据库中表的查询操作
  * 
- * @创建日志 Luo & Young Jul 1
+ * @创建日志 Luo & Young Jul 1 
  * 
  * @修改日志 暂无
  * 

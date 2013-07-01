@@ -4,7 +4,7 @@ package com.yonvoo.domain;
  * 
  * @功能 数据库表中的实体类
  * 
- * @创建日志 Young Jul 1
+ * @创建日志 Young Jul 1  
  * 
  * @修改日志 暂无
  * 
