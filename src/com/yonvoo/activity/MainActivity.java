@@ -23,7 +23,21 @@ import android.widget.Toast;
 
 import com.yonvoo.adapter.GridViewAdapter;
 import com.yonvoo.main.R;
-
+/**
+ * 
+ * @功能 显示一级分类，后续应该还会增加 
+ * 
+ * @创建日志 姜布斯 2013-7-1下午5:44:56
+ * 
+ * @修改日志 无
+ * 
+ * @如何使用 
+ * 
+ * @注意的地方 actionbar的版本问题，android系统需要3.0+ 
+ * 
+ * @开发日志 TODO 修改gridview项目点击时背景所显示问题
+ *
+ */
 public class MainActivity extends Activity {
 
 	private GridView gridView;
@@ -36,8 +50,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
-		// GridView
+		//栏目名称
 		String[] titles = { "自然灾害", "运动自救", "日常意外" };
 		int[] resIds = { R.drawable.ziranzaihai, R.drawable.yundongzijiu,
 				R.drawable.richangyiwai };
@@ -47,16 +60,14 @@ public class MainActivity extends Activity {
 		sa = new ScaleAnimation(0, 1, 0, 1);
 		// 动画的时间
 		sa.setDuration(900);
-
+		//设置动画
 		lac = new LayoutAnimationController(sa);
 		lac.setOrder(LayoutAnimationController.ORDER_NORMAL);
 		gridView.setLayoutAnimation(lac);
 		gridView.startLayoutAnimation();
-
 		gridView.setOnItemClickListener(new OnListItemClickListener());
-
+		
 		dbInsert();
-
 	}
 	
     Handler mHandler = new Handler() {
@@ -135,7 +146,7 @@ public class MainActivity extends Activity {
 	}
 
 	/**
-	 * gridview监听事件
+	 * gridview监听事件，注意和罗工传值要一致
 	 * 
 	 * @author 姜工
 	 * 
@@ -159,6 +170,7 @@ public class MainActivity extends Activity {
 
 			}
 			startActivity(intent);
+			//设置Activity切换动画，由右向左切换
 			overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 		}
 
@@ -168,6 +180,7 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		getMenuInflater().inflate(R.menu.activity_main, menu);
+		//设置关于按钮
 		menu.findItem(R.id.subitem2).getActionView();
 		return true;
 	}
