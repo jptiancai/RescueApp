@@ -10,7 +10,21 @@ import android.widget.TextView;
 
 import com.yonvoo.main.R;
 
-
+/**
+ * 
+ * @功能 来显示gridview的适配器
+ * 
+ * @创建日志 姜布斯 2013-7-1下午5:52:20
+ * 
+ * @修改日志 无
+ * 
+ * @如何使用 无
+ * 
+ * @注意的地方 由于主要参照eoe社区的代码，不太明白他的过程，传神的地方是“利旧”
+ * 
+ * @开发日志 TODO 加进去传智播客中优化重复findviewbyid造成的问题
+ *
+ */
 public  class GridViewAdapter extends BaseAdapter {
 
 	String[] itemTitles, itemTexts;
