@@ -7,15 +7,15 @@
   4、（罗工）listview动画呈现，
   5、（杨工）详细界面的阐述
 
-##暴露的问题或bug收集：
+##To do
 
-  1、切换两个activity的时候，如分类到listview和点击关于界面时，不能像微信一样切换
+- [ ]切换两个activity的时候，如分类到listview和点击关于界面时，不能像微信一样切换
 
+##Next
 
-##v1.1版本增加功能统计：
+- [ ]符合 Android Design 的应用，（抽屉效果等）
+- [ ]增加gridview、listview和详细页面的增删改功能，具体可参照Youni短信和QQ聊天列表和长按文字操作
 
-  1、符合 Android Design 的应用，（抽屉效果等）
-  2、增加gridview、listview和详细页面的增删改功能，具体可参照Youni短信和QQ聊天列表和长按文字操作
 
 ##参考相关APP：
 
